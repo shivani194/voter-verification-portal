@@ -7,14 +7,24 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <h1 class="fade-in">Welcome to Voter Verification Portal</h1>
+
+    
+
     <div class="container">
-        <h1>Voter Verification</h1>
+        <h2>Select Verification Method</h2>
         <form action="/verify" method="post">
-            <label>Select Verification Method:</label><br>
-            <input type="radio" name="verification_method" value="face" required> Face ID Verification<br>
-            <input type="radio" name="verification_method" value="otp" required> OTP Verification<br>
-            <button type="submit">Verify</button>
+            <button type="submit" name="verification_method" value="face" class="method-btn face-btn">
+                Face ID Verification
+            </button>
+            <button type="submit" name="verification_method" value="otp" class="method-btn otp-btn">
+                OTP Verification
+            </button>
         </form>
     </div>
+
+    <footer>
+        © 2025 Pixel Pals. All Rights Reserved.
+    </footer>
 </body>
 </html>

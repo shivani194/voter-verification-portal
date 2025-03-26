@@ -1,36 +1,100 @@
+/* Smooth background gradient */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background: lightgray;
     text-align: center;
-    padding: 50px;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
+/* Animated Welcome Text */
+h1 {
+    font-size: 45px;
+    color: black;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    text-align: start;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Voting Image */
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: 60%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Centered Form Container */
 .container {
     background: white;
-    padding: 20px;
-    width: 300px;
-    margin: auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
+/* Headings inside container */
+h2 {
+    font-size: 20px;
     color: #333;
+    margin-bottom: 15px;
 }
 
-button {
+/* Verification Buttons */
+.method-btn {
     display: block;
     width: 100%;
     margin: 10px 0;
-    padding: 10px;
-    background-color: #007bff;
+    padding: 15px;
+    font-size: 18px;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    transition: 0.3s ease-in-out;
 }
 
-button:hover {
-    background-color: #0056b3;
+/* Different colors for different buttons */
+.face-btn {
+    background-color: #28a745;
+}
+
+.otp-btn {
+    background-color: #dc3545;
+}
+
+/* Hover effects */
+.face-btn:hover {
+    background-color: #218838;
+}
+
+.otp-btn:hover {
+    background-color: #c82333;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ddd;
 }
