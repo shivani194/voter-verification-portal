@@ -1,35 +1,14 @@
-/* Smooth background gradient */
 body {
     font-family: Arial, sans-serif;
-    background: lightgray;
+    background-color: #e3f2fd;
     text-align: center;
-    padding: 0;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    padding: 50px;
 }
 
-/* Animated Welcome Text */
 h1 {
-    font-size: 45px;
-    color: black;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in-out forwards;
-    text-align: start;
+    color: #0d47a1;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Voting Image */
 .image-container {
     display: flex;
     justify-content: center;
@@ -37,64 +16,131 @@ h1 {
 }
 
 .image-container img {
-    width: 60%;
-    max-width: 400px;
+    width: 80%;
+    max-width: 600px;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Centered Form Container */
 .container {
     background: white;
-    padding: 30px;
-    width: 350px;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
-/* Headings inside container */
 h2 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 15px;
+    color: #1565c0;
 }
 
-/* Verification Buttons */
-.method-btn {
+button {
     display: block;
     width: 100%;
     margin: 10px 0;
-    padding: 15px;
-    font-size: 18px;
+    padding: 10px;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    font-size: 16px;
 }
 
-/* Different colors for different buttons */
-.face-btn {
+button:hover {
+    background-color: #0056b3;
+}
+
+input[type="tel"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666;
+}
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 15px;
     background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.otp-btn {
-    background-color: #dc3545;
-}
-
-/* Hover effects */
-.face-btn:hover {
+button:hover {
     background-color: #218838;
 }
 
-.otp-btn:hover {
-    background-color: #c82333;
+.container {
+    width: 300px;
+    margin: 100px auto;
+    text-align: center;
 }
 
-/* Footer */
-footer {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #ddd;
+.btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: darkgreen;
 }

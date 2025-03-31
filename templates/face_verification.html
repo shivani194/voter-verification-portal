@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Verification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Face Verification</h1>
+    <div class="container">
+        <h2>Live Camera Feed</h2>
+        <img src="{{ url_for('video_feed') }}" alt="Live Camera Feed">
+        <form action="/process_face_verification" method="post">
+            <button type="submit">Capture & Verify</button>
+        </form>
+    </div>
+
+    {% if message %}
+    <h2>{{ message }}</h2>
+{% else %}
+    <h2>Face Verification Required</h2>
+    <form action="/face_verification" method="post">
+        <label for="voter_id">Voter ID:</label>
+        <input type="text" id="voter_id" name="voter_id" required>
+        <button type="submit" class="btn">Verify Face</button>
+    </form>
+{% endif %}
+
+    <footer>© 2025 Pixel Pals</footer>
+</body>
+</html>

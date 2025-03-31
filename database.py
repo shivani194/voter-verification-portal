@@ -71,6 +71,15 @@ update_voter_name("VOTER127", "Aishwarya Kale")  # Example usage
  # Example usage
   # Example usage
 
+def get_voter_by_phone(phone):
+    conn = sqlite3.connect("voters.db")
+    cursor = conn.cursor()
+    
+    cursor.execute("SELECT voter_id, voter_name FROM voters WHERE voter_phone = ?", (phone,))
+    voter = cursor.fetchone()
+    
+    conn.close()
+    return voter
 
 
 

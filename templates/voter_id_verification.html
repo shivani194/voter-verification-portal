@@ -1,0 +1,18 @@
+<!-- templates/voter_id_verification.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter ID Verification</title>
+</head>
+<body>
+    <h2>Voter ID Verification</h2>
+    <form action="/verify_id" method="post">
+        <input type="hidden" name="method" value="voter_id">
+        <label for="voter_id">Enter Voter ID:</label>
+        <input type="text" id="voter_id" name="voter_id" required>
+        <button type="submit">Verify Voter ID</button>
+    </form>
+</body>
+</html>

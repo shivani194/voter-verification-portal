@@ -1,0 +1,15 @@
+<body>
+    <div class="container">
+        {% if already_voted %}
+            <h2 style="color: red;">Voter has already cast their vote.</h2>
+        {% else %}
+            <h2>Enter OTP</h2>
+            <form action="/verify_otp" method="post">
+                <label for="otp">Enter OTP:</label>
+                <input type="text" id="otp" name="otp" required>
+                <input type="hidden" name="phone" value="{{ phone }}">
+                <button type="submit" class="btn">Verify OTP</button>
+            </form>
+        {% endif %}
+    </div>
+</body>
