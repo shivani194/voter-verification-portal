@@ -1,0 +1,7 @@
+dlib
+flask
+opencv-python	
+numpy
+pillow
+sqlite3
+imutils
