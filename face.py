@@ -101,13 +101,13 @@ def fetch_voter_details(voter_name):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
-    cursor.execute("SELECT voter_id, voter_name FROM voters WHERE voter_name = ?", (voter_name,))
+    cursor.execute("SELECT voter_id, voter_name, voter_phone FROM voters WHERE voter_name = ?", (voter_name,))
     result = cursor.fetchone()
     
     conn.close()
     
     if result:
-        return {"voter_id": result[0], "voter_name": result[1]}
+        return {"voter_id": result[0], "voter_name": result[1], "phone": result[2]}
     return None
 
 def check_if_voted(voter_id):
