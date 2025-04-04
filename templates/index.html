@@ -5,22 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voter Verification</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
 </head>
 <body>
-    <h1>Welcome to Voter Verification Portal</h1>
-    <div class="image-container">
-        <img src="{{ url_for('static', filename='vote.jpg') }}" alt="Voting Process">
-    </div>
-    <div class="container">
-        <h2>Select Verification Method</h2>
-        <form action="/verify" method="post">
-            <button type="submit" name="verification_method" value="face">Face ID Verification</button>
-            <button type="submit" name="verification_method" value="otp">OTP Verification</button>
-            <button type="submit" name="verification_method" value="voter_id">Voter ID Verification Verification</button>
+    <header>
+        <img src="{{ url_for('static', filename='flag.png') }}" alt="Flag" class="flag" style="float:right;">
+        <img src="{{ url_for('static', filename='gov_logo.png') }}" alt="Government Logo" class="gov-logo" style="float: left;">
+        <img src="{{ url_for('static', filename='Votentic.png') }}" alt="Website Logo" class="web-logo">
 
-        </form>
-     
+        
+        <h1>
+            <marquee id="welcome-text" style="animation: 3s infinite;" behavior="scroll" direction="left">
+                Welcome to Voter Verification Portal! मतदाता सत्यापन पोर्टल में आपका स्वागत है! मतदार पडताळणी पोर्टलवर आपले स्वागत आहे!
+            </marquee>
+        </h1>
+    </header>
+
+<div class="votinghand">
+    <div class="votingmessage">
+        <h2 >EVERY VOTE MATTERS!</h2>
     </div>
-    <footer>© 2025 Pixel Pals</footer>
+</div>
+<div class="languageSelection">
+    <label for="language" >Select Language:</label>
+    <select id="language" onchange="updateText()">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+    </select>
+</div>
+<div class="verification-container">
+   
+    <div class="verification-methods" >
+        <h2 id="verification-heading">Select Verification Method</h2>
+        <form action="/verify" method="post">
+            <button type="submit" name="verification_method" value="face" id="face-btn">Face ID Verification</button>
+            <button type="submit" name="verification_method" value="otp" id="otp-btn">OTP Verification</button>
+            <button type="submit" name="verification_method" value="voter_id" id="voter-id-btn">Voter ID Verification</button>
+        </form>
+    </div>
+    <div class="instructions" id="instructions">
+        <h3>INSTRUCTIONS</h3>
+        <P>1. For face id verification,please look at the camera and blink.</P>
+        <p>2. For otp verification ,enter you registered mobile number and you will recieve an otp on that number only.</p>
+        <p>3.Enter the otp.</p>
+        <p>4.For Voter id verification enter your correct voter id from your voter id card.</p>
+    </div>
+   
+</div>
+<div class="about-section" >
+    <h2>About Us</h2>
+    <p>
+        Our Automated Voter Verification System is designed to streamline and secure the voter authentication process through the use of cutting-edge technology. 
+        We aim to modernize the voting experience by eliminating manual errors, reducing verification time, and enhancing trust in the electoral process.
+        By integrating biometric face recognition, OTP-based mobile authentication, and voter ID verification, our system ensures that only eligible and verified individuals can access the voting platform.
+        With multilingual support and a user-friendly interface, we strive to make the system accessible to voters across different regions and backgrounds.
+        Our mission is to uphold the integrity of democratic systems by offering a fast, transparent, and tamper-proof solution that empowers both voters and electoral authorities.
+    </p>
+</div>
+
+<script>
+    const translations = {
+        en: {
+            welcome: "Welcome to Voter Verification Portal!",
+            verification: "Select Verification Method",
+            face: "Face ID Verification",
+            otp: "OTP Verification",
+            voter_id: "Voter ID Verification",
+            instructions:"INSTRUCTIONS\n1.For face id verification,please look at the camera and blink.\nFor otp verification ,enter you registered mobile number and you will recieve an otp on that number only.\n3.Enter the otp.\n4.For Voter id verification enter your correct voter id from your voter id card."
+        },
+        hi: {
+            welcome: "मतदाता सत्यापन पोर्टल में आपका स्वागत है!",
+            verification: "सत्यापन विधि चुनें",
+            face: "चेहरा पहचान सत्यापन",
+            otp: "ओटीपी सत्यापन",
+            voter_id: "मतदाता पहचान पत्र सत्यापन",
+            instructions:"निर्देश\n१. चेहरे की पहचान सत्यापन के लिए, कृपया कैमरे की ओर देखें और पलक झपकाएं।\n २. ओटीपी सत्यापन के लिए, अपना पंजीकृत मोबाइल नंबर डालें और आपको केवल उसी नंबर पर ओटीपी प्राप्त होगा। \n३. ओटीपी डालें। \n४. मतदाता पहचान सत्यापन के लिए, अपने मतदाता पहचान पत्र से अपना सही मतदाता आईडी दर्ज करें।"
+        },
+        mr: {
+            welcome: "मतदार पडताळणी पोर्टलवर आपले स्वागत आहे!",
+            verification: "सत्यापन पद्धत निवडा",
+            face: "फेस आयडी पडताळणी",
+            otp: "ओटीपी पडताळणी",
+            voter_id: "मतदार ओळखपत्र पडताळणी",
+            instructions:"सूचना\n१. फेस आयडी व्हेरिफिकेशनसाठी कॅमेरा बघा आणि पलक झपका.\n2.ओटीपी व्हेरिफिकेशनसाठी तुमचा नोंदणीकृत मोबाइल नंबर टाका आणि त्या नंबरवरच तुम्हाला ओटीपी मिळेल.\n3. ओटीपी प्रविष्ट करा.\n4. मतदार ओळखपत्र पडताळणीसाठी आपल्या मतदार ओळखपत्रातून आपले योग्य मतदार ओळखपत्र प्रविष्ट करा."
+        }
+    };
+
+    function updateText() {
+        const selectedLanguage = document.getElementById("language").value;
+        document.getElementById("welcome-text").innerText = translations[selectedLanguage].welcome;
+        document.getElementById("verification-heading").innerText = translations[selectedLanguage].verification;
+        document.getElementById("face-btn").innerText = translations[selectedLanguage].face;
+        document.getElementById("otp-btn").innerText = translations[selectedLanguage].otp;
+        document.getElementById("voter-id-btn").innerText = translations[selectedLanguage].voter_id;
+        document.getElementById("instructions").innerText=translations[selectedLanguage].instructions;
+    }
+</script>
+<footer>
+    © 2025 Pixel Pals
+</footer>
 </body>
 </html>
