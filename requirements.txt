@@ -5,3 +5,4 @@ numpy
 pillow
 sqlite3
 imutils
+twilio
