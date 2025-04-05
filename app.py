@@ -109,7 +109,7 @@ def verify_voter_id(voter_id):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
-    cursor.execute("SELECT voter_name, voter_id, phone FROM voters WHERE voter_id = ?", (voter_id,))
+    cursor.execute("SELECT voter_name, voter_id, voter_phone FROM voters WHERE voter_id = ?", (voter_id,))
     voter = cursor.fetchone()
     conn.close()
 
@@ -147,7 +147,7 @@ def verify_id():
             phone = voter_data.get("voter_phone", "N/A")  # Handle missing phone number
 
             # Mark voter as voted
-            mark_as_voted(voter_name, voter_id, phone)
+            mark_voter_as_voted(voter_name, voter_id, phone)
 
             return render_template("result.html", result=f"Voter Verified ✅<br>Name: {voter_name}<br>Voter ID: {voter_id}")
         else:
