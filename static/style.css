@@ -82,6 +82,9 @@ button:hover {
 input[type="tel"], input[type="number"] {
     width: 100%;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;

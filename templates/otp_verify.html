@@ -1,3 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter OTP</title>
+
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       display: flex;
+       justify-content: center;
+        height: 50vh;
+    }
+
+    .container {
+        background-color: white;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 300px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        font-size: 22px;
+        color: #1d4ed8;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    button {
+        background-color: #0b5ed7;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    button:hover {
+        background-color: #094bbf;
+    }
+
+    .error {
+        color: red;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
 <body>
     <div class="container">
         {% if already_voted %}
@@ -13,3 +81,6 @@
         {% endif %}
     </div>
 </body>
+
+
+</html>
