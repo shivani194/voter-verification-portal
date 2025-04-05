@@ -19,7 +19,17 @@ header { background: #cfe5f1; color:#0056b3 ; padding: 0px; text-align: left; }
     justify-content: center;
     
 }
-.languageSelection { font-family: Arial, sans-serif;text-align: center;margin:10px 600px 10px 0px ; color:#0056b3;}
+.languageSelection {font-size: 22px;   
+    padding: 5px 10px; 
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin:10px 600px 10px 0px ; 
+    color:#0056b3;}
+
+    .languageSelection select {
+    font-size: 18px;   /* increases dropdown text size */
+    padding: 5px 10px; /* increases dropdown padding */
+}
 .verification-container{
     display: flex;
     justify-content: space-evenly;
