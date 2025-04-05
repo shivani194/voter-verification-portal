@@ -32,10 +32,16 @@ A secure and intelligent voting system that verifies a voter's identity through 
   Add voter face images to the /voter_images directory.
   Add voter names and voter IDs in database.py.
 
- 4.Run the Flask application:
+4. Configure Twilio (For OTP Verification)
+   Create a Twilio account.
+   Get your Twilio Account SID, Auth Token, and a verified phone number.
+   Open otp.py and replace the placeholders with your actual Twilio credentials and phone number.
+
+
+5.Run the Flask application:
   python app.py
 
-5. Access the Systen in your browser:
+6. Access the Systen in your browser:
   http://localhost:5000
 
 ## Security Considerations
