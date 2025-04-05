@@ -32,7 +32,7 @@ A secure and intelligent voting system that verifies a voter's identity through 
   Add voter face images to the /voter_images directory.
   Add voter names and voter IDs in database.py.
 
-4.Run the Flask application:
+ 4.Run the Flask application:
   python app.py
 
 5. Access the Systen in your browser:
