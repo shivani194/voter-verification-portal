@@ -29,7 +29,7 @@ A secure and intelligent voting system that verifies a voter's identity through 
    pip install -r requirements.txt
 
 3. Set up your data:
-  Add voter face images to the /voter_images directory.
+  Create /voter_images directory and voter face images to it
   Add voter names and voter IDs in database.py.
 
 4. Configure Twilio (For OTP Verification)
