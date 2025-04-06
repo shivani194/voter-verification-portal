@@ -6,9 +6,9 @@ def generate_otp():
     return str(random.randint(100000, 999999))
 
 def send_otp(phone, otp):
-    TWILIO_ACCOUNT_SID = "ACc02073d00ece0ab993b226c92f26c453"
-    TWILIO_AUTH_TOKEN = "6b87b5b342cb87a6f18d8400ba254de7"
-    TWILIO_PHONE_NUMBER = "+18149928843"
+    TWILIO_ACCOUNT_SID = "your_acc_sid"
+    TWILIO_AUTH_TOKEN = "your_auth_token"
+    TWILIO_PHONE_NUMBER = "your-twilio_number"
     
     client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
     message = client.messages.create(
